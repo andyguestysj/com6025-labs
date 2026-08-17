@@ -1,0 +1,11 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/venv/Scripts/python.exe",
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "*.vert": "glsl",
+        "*.frag": "glsl",
+        "*.glsl": "glsl"
+    },
+    "editor.rulers": [100],
+    "editor.tabSize": 4
+}
