@@ -10,6 +10,7 @@
     "editor.tabSize": 2,
     "python.analysis.diagnosticSeverityOverrides": {
         "reportPrivateImportUsage": "none",
-        "reportAttributeAccessIssue": "none"
+        "reportAttributeAccessIssue": "none",
+        "reportCallIssue": "none"
     }
 }
