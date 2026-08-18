@@ -62,12 +62,6 @@ class CameraDemo(mglw.WindowConfig):
       index_element_size=4,
     )
     
-    eye = glm.vec3(0.0, 1.5, 4.0)
-    target = glm.vec3(0.0, 0.0, 0.0)
-    up = glm.vec3(0.0, 1.0, 0.0)
-    self.view = glm.lookAt(eye, target, up) 
-    self.prog['m_view'].write(self.view)
-    
     width, height = self.window_size
     aspect_ratio = width / height
     self.proj = glm.perspective(glm.radians(60.0), aspect_ratio, 0.1, 100.0)
@@ -76,6 +70,13 @@ class CameraDemo(mglw.WindowConfig):
   def on_render(self, time, frame_time):
     self.ctx.clear(0.1, 0.1, 0.1)
     self.ctx.clear(depth=True)
+    
+    radius = 4.0
+    eye = glm.vec3(radius * math.sin(time), 1.5, radius * math.cos(time))
+    target = glm.vec3(0.0, 0.0, 0.0)
+    up = glm.vec3(0.0, 1.0, 0.0)
+    self.view = glm.lookAt(eye, target, up) 
+    self.prog['m_view'].write(self.view)
 
     for obj in OBJECTS:
       model = glm.translate(glm.mat4(), obj['position'])
