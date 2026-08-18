@@ -7,5 +7,9 @@
         "*.glsl": "glsl"
     },
     "editor.rulers": [100],
-    "editor.tabSize": 4
+    "editor.tabSize": 2,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportPrivateImportUsage": "none",
+        "reportAttributeAccessIssue": "none"
+    }
 }
